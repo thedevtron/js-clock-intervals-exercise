@@ -32,7 +32,24 @@ function hourRotation(hours, minutes) {
     
 
 function tick() {
-    console.log("tick")
+    // increase the time by one second
+    seconds++
+
+    if(seconds==60) {
+        minutes++
+        seconds=0
+    }
+    
+    if(minutes==60) {
+        hours++
+        minutes=0
+    }
+
+    if(hours==12) {
+        hours=0
+    }
+
+    console.log(`${hours}:${minutes}:${seconds}`)
 }
 
 document.addEventListener('DOMContentLoaded', function(){
