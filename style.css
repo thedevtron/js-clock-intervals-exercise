@@ -2,9 +2,6 @@
 
 However; if an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling. */
 
-#clock {
-}
-
 #clock img {
     /* FROM w3 SCHOOLS */
     /* An element with position: absolute; is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
@@ -14,12 +11,10 @@ However; if an absolute positioned element has no positioned ancestors, it uses 
 }
 
 #hour {
-    /* transform: rotate(45deg); */
     z-index: 2;
 }
 
 #minute {
-    /* transform: rotate(90deg); */
     z-index: 1;
 }
 
