@@ -3,46 +3,72 @@
 Create a webpage that displays a clock where the
 second, minute, and hour hands tick.
 
-Write CSS to have the clock face, second, minute, hour
-hands all display correctly on top of each other. Make
-sure the red second hand displays on top of the minute
-and hour hand. (Try changing the order the div elements
-are written in the HTML)
+#1: Write CSS to have the clock face, second, minute, hour
+hands all display correctly on top of the face.
 
-Create intervals in the JavaScript file to make the
-clocks tick.
+#2: Write CSS to have the second, minute, hour
+hands all display in the correct order. Make
+sure the red second hand displays on top of the minute
+and hour hand.
+
+#3: Write a function that converts the seconds to degrees of rotation and returns the degrees.
 
 Use CSS transform rotation to rotate the hands of the
 clock.
 
-```css
-#myElement {
-  transform: rotate(45deg);
+```js
+function secondRotation(seconds) {
+  //code
+  return degRotation
 }
 ```
 
-Change CSS values in JavaScript by getting reference
-to them through the DOM and setting a new value to
-their CSS properties:
+#4: Write `minuteRotation` and `hourRotation` functions. As a bonus, account for the “in between” degrees; ie don’t just have the minute hand jump between minutes, but have it rotate each SECOND, and have the hour hand rotate each MINUTE.
+
+<details><summary>HINT: minuteRotation</summary>
+<p>
 
 ```js
-var degrees = 45;
+function minuteRotation(minutes, seconds) {
+  // first, find the total seconds by converting the minutes to seconds then adding that value to the seconds argument
+  //  code here
 
-var el = document.getElementById("myElement");
-el.style.transform = "rotate(" + degrees + "deg)";
+  // there are 60sec*60min=3600 seconds in a hour
+  // that means, each second needs to rotate the
+  // minutehand by 360/3600=.1 degrees
+
+  // code here to find the degrees of rotation
+  // don’t forget to return the final value!
+
+}
 ```
+</p>
+</details>
 
-It would be useful to define functions that convert
-seconds, minutes and hours to how many degrees the
-hand should be rotated around the clock!
+<details><summary>HINT: hourRotation</summary>
+<p>
 
 ```js
-secondRotation(0); // returns 0
-secondRotation(59); // returns (59 / 60) * 360
+function hourRotation(hours, minutes) {
+  // first, find the total minutes converting the hours to minutes, then adding that value to the minutes argument
+  // code here
 
-hourRotation(12); // returns 0
-hourRotation(5); // returns (5 / 12) * 360
+  // there are 60min*12hr=720 minutes in a hour
+  // that means, each minute needs to rotate the
+  // minutehand by 360/720=.5 degrees
+
+  // code here to find the degrees of rotation
+  // don’t forget to return the final value!
+}
 ```
+</p>
+</details>
+
+#5: Write a `tick` function that logs “tick” to the console.  How would you get the tick function to run every minute? Don’t forget to set up a  DOMContentLoaded event listener.
+
+#6: Initialize three variables to zero: `seconds`, `minutes` and `hours`. Modify the `tick` function to update and print values of ``seconds`, `minutes` and `hours`.
+
+#7. Grab the three DOM elements you need to manipulate and store them so you can refer to them later. Rotate them accordingly inside the tick function.
 
 ## Bonus: Show Actual Time
 Use JavaScripts `Date` objects to display the actual
