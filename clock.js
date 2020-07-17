@@ -50,9 +50,17 @@ function tick() {
     }
 
     console.log(`${hours}:${minutes}:${seconds}`)
+
+    secHand.style.transform = "rotate(" + secondRotation(seconds) + "deg)";
+    minHand.style.transform = "rotate(" + minuteRotation(minutes, seconds) + "deg)";
+    hourHand.style.transform = "rotate(" + hourRotation(hours, minutes) + "deg)";
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+    secHand = document.getElementById("second");
+    minHand = document.getElementById("minute");
+    hourHand = document.getElementById("hour");
+
     // second arg of setInterval is in miliseconds (1/1000 of a second)
     setInterval(tick, 1000)
 })
