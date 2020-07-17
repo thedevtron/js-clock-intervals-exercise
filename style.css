@@ -14,11 +14,15 @@ However; if an absolute positioned element has no positioned ancestors, it uses 
 }
 
 #hour {
-
+    transform: rotate(45deg);
+    z-index: 2;
 }
 
 #minute {
+    transform: rotate(90deg);
+    z-index: 1;
 }
 
 #second {
+    z-index: 3;
 }
