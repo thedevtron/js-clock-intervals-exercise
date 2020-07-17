@@ -57,6 +57,16 @@ function tick() {
 }
 
 document.addEventListener('DOMContentLoaded', function(){
+
+    // ---BONUS--- //
+    let now = new Date();
+
+    minutes = now.getMinutes();
+    seconds = now.getSeconds();
+    hours = now.getHours()%12;
+
+    // ---END OF BONUS--- //
+
     secHand = document.getElementById("second");
     minHand = document.getElementById("minute");
     hourHand = document.getElementById("hour");
