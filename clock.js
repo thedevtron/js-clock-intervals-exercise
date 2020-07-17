@@ -25,3 +25,12 @@ function hourRotation(hours) {
   let degRotation = .5*minutes
   return degRotation
 }
+
+function tick() {
+    console.log("tick")
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+    // second arg of setInterval is in miliseconds (1/1000 of a second)
+    setInterval(tick, 1000)
+})
